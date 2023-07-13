@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(235, 18%, 26%);
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: hsl(234, 29%, 20%);
+    perspective: 1500px;
+    overflow: hidden;
+}
+
+.front, .back {
+    background: white;
+    border-radius: 40px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 920px;
+    height: 627px;
+    max-width: 90%;
+}
+
+.front-flip {
+    transition: 1s;
+    transform: rotateY(180deg);
+    z-index: -5;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.left {
+    padding: 0 0px 0 60px;
+}
+
+.header {
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.desc {
+    margin: 30px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+ul li svg {
+    margin-right: 15px;
+}
+
+form {
+    margin-top: 50px;
+}
+
+form .input-info {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-info .error {
+    color: hsl(4, 100%, 67%);
+    display: none;
+}
+
+input {
+    height: 60px;
+    margin: 10px 0 20px;
+    width: 100%;
+    border: 1px solid hsla(231, 7%, 60%, 0.5);
+    padding-left: 25px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;
+    outline: none;
+}
+
+.invalid {
+    background: hsla(4, 100%, 67%, 0.2);
+    border: 1px solid hsl(4, 100%, 67%);
+}
+
+.invalid::placeholder {
+    color: hsl(4, 100%, 67%);
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    background: hsl(234, 29%, 20%);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    background: linear-gradient(90deg, hsl(345, 93%, 65%), hsl(4, 100%, 67%));
+    box-shadow: 0px 10px 30px -5px hsla(12, 94%, 62%);
+}
+
+.right {
+    padding: 30px;
+}
+
+.back {
+    z-index: -5;
+    position: absolute;
+    width: 920px;
+    height: 657px;
+    padding: 50px;
+    transform: rotateY(180deg);
+    font-size: 18px;
+}
+
+
+.back .header {
+    margin: 30px 0;
+    line-height: 1;
+}
+
+.back p {
+    padding-right: 40px;
+}
+
+.back button {
+    margin-top: 30px;
+}
+
+.back-flip {
+    transition: 1s;
+    width: 500px;
+    height: 500px;
+    transform: rotateY(360deg);
+    z-index: 5;
+}
+
+
+.attribution {  
+    position: fixed;
+    bottom: -50px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background: white;
+    transition: .2s;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+body:hover .attribution, .attribution:hover {
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        display: block;
+        position: relative;
+    }
+
+    .front {
+        justify-content: flex-end;
+        align-items: normal;
+        flex-direction: column-reverse;
+    }
+
+    .back {
+        top: 0;
+        position: absolute;
+        max-width: 100%;
+        height: 100vh;
+        padding: 150px 30px 0px;
+    }
+
+    .back p {
+        padding-right: 0;
+    }
+    .back button {
+        position: absolute;
+        width: calc(100% - 60px);
+        bottom: 50px;
+    }
+
+    .front, .back {
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+        transition: 0s;
+    }
+
+    .left {
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 40px;
+    }
+
+    .desc {
+        margin: 20px 0;
+    }
+
+    ul li {
+        line-height: 1.4;
+    }
+
+    .right {
+        padding: 0;
+        background: url("assets/images/illustration-sign-up-mobile.svg") no-repeat;
+        background-size: cover;
+        height: 284px;
+    }
+
+    .right img {
+        display: none;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
