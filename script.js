@@ -7,7 +7,7 @@ let form  = document.querySelector("form"),
     error = document.querySelector(".error");
 
 form.addEventListener("submit", function() {
-    if (!re.test(input) || input.value === "") {
+    if (!re.test(input.value) || input.value === "") {
         input.classList.add("invalid");
         error.style.display = "block";
     } else {
