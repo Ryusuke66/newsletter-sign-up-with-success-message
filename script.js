@@ -3,10 +3,11 @@ let form  = document.querySelector("form"),
     frontCard = document.querySelector(".front"),
     backCard = document.querySelector(".back"),
     description = document.querySelector(".back p"),
+    re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
     error = document.querySelector(".error");
 
 form.addEventListener("submit", function() {
-    if (!input.checkValidity() || input.value === "") {
+    if (!re.test(input) || input.value === "") {
         input.classList.add("invalid");
         error.style.display = "block";
     } else {
