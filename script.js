@@ -3,7 +3,7 @@ let form  = document.querySelector("form"),
     frontCard = document.querySelector(".front"),
     backCard = document.querySelector(".back"),
     description = document.querySelector(".back p"),
-    re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+    re =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
     error = document.querySelector(".error");
 
 form.addEventListener("submit", function() {
