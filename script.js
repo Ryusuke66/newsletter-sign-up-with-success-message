@@ -23,4 +23,5 @@ form.addEventListener("submit", function() {
 backButton.onclick = function() {
     frontCard.classList.remove("front-flip");
     backCard.classList.remove("back-flip");
+    input.value = "";
 }
